@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script
+              src="http://code.jquery.com/jquery-3.4.1.js"
+              integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+              crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1 id="header-h1">Null Alanı !</h1>
+            <button onclick="regular()" id="header-button">Replace için tıkla bana !</button>
+        </header>
+        <article>
+            <h3>Kutuları Haraket Ettirmek İçin Basılı Tutup Sürükleyin.</h3>
+            <div class="renkli-kutu" id="kirmizi"></div>
+            <div class="renkli-kutu" id="sari"></div>
+            <div class="renkli-kutu" id="siyah"></div>
+            <div class="renkli-kutu" id="yesil"></div>
+            <div class="renkli-kutu" id="pembe"></div>
+        </article>
+        <article id="float-clear">
+            <div id="resizable" class="ui-widget-content">
+                  <h3 class="ui-widget-header">Lorem</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore...</p>
+            </div>
+            <div id="accordion">
+                <h2>Renkler</h2>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <h2>Renkler</h2>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>             
+                <h2>Renkler</h2>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>             
+                <h2>Renkler</h2>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>             
+            </div>
+        </article>
+  
+        <footer>
+            <h1 id="footer-h1">Footer Alanı !</h1>
+        </footer>
+    </div>
+</body>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: grey;
+}
+header {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 5vh;
+
+}
+header > button {
+    float: left;
+    bottom: -5vh;
+}
+article {
+    padding: 5vh 0;
+    background-color: grey;
+}
+article > h3 {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+
+}
+article > div {
+}
+.renkli-kutu {
+    width: 12vw;
+    height: 12vh;
+    float: left;
+    margin: 5vh;
+}
+#float-clear {
+    clear: both;
+}
+#kirmizi {
+    background-color: red;
+}
+#sari {
+    background-color: yellow;
+}
+#siyah {
+    background-color: black;
+}
+#yesil {
+    background-color: green;
+}
+#pembe {
+    background-color: pink;
+}
+#resizable {
+    width: 15vw;
+    height: 15vh;
+    padding: 0.5em;
+    margin: 1vh auto;
+
+}
+#resizable h3 {
+    text-align: center;
+    margin: 0;
+}
+#accordion {
+    margin: 10vh 0;
+}
+footer {
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 3vh;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+function regular() {
+  var str = document.getElementById("header-h1").innerHTML;
+  var txt = str.replace("Null","Header");
+  document.getElementById("header-h1").innerHTML = txt;
+}
+$( function() {
+   $( ".renkli-kutu" ).draggable();
+} );
+$( function() {
+   $( "#resizable" ).resizable();
+} );
+$( function() {
+   $( "#accordion" ).accordion();
+} );
+</script>
+</html>
